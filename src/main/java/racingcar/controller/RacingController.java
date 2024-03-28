@@ -4,6 +4,12 @@ import racingcar.view.InputView;
 
 public class RacingController {
     public static void startRacing() {
-        InputView.inputName();
+        InputView inputView = new InputView();
+        inputView.inputName();
+        int tryCount = inputView.inputCount();
+
+        for (int i=0; i<tryCount; ++i) {
+
+        }
     }
 }
