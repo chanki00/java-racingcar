@@ -24,6 +24,36 @@ public class Application {
         return count;
     }
 
+    public static int generateRandNum() {
+        return Randoms.pickNumberInRange(0, 9);
+    }
+
+    public static boolean satisfiedCondition(int randNum) {
+        return randNum >= 4;
+    }
+
+    public static void advance(Car car) {
+        int currCount = car.getAdvanceCount();
+        if (satisfiedCondition(generateRandNum())) {
+            car.setAdvanceCount(currCount+1);
+        }
+    }
+
+    public static void startRound(List<Car> cars) {
+        for (Car car : cars) {
+            advance(car);
+            int currCount = car.getAdvanceCount();
+            System.out.print(car.getName() + " : ");
+            for (int i=0; i<currCount; ++i) {
+                System.out.print("-");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+
+
 
     public static void main(String[] args) {
         // TODO: 프로그램 구현
@@ -31,7 +61,9 @@ public class Application {
 
         int tryCount = inputCount();
 
+        System.out.println("실행 결과");
         for (int i=0; i<tryCount; ++i) {
+            startRound(cars);
         }
 
 
