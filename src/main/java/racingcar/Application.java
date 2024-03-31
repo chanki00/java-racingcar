@@ -71,5 +71,16 @@ public class Application {
         }
 
         List<Car> winners = findWinner(cars);
+
+        int winnerCount = winners.size();
+
+        System.out.print("최종 우승자 : ");
+        if (winnerCount > 1) {
+            for (int i=0; i<winnerCount-1; ++i) {
+                System.out.print(winners.get(i).getName() + ", ");
+            }
+        }
+        System.out.println(winners.get(winnerCount-1).getName());
+
     }
 }
