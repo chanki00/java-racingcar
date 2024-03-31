@@ -13,8 +13,19 @@ public class Application {
         return names;
     }
 
+    public static int inputCount() {
+        System.out.println("시도할 회수는 몇회인가요?");
+        int count = Integer.parseInt(Console.readLine());
+        return count;
+    }
+
     public static void main(String[] args) {
         // TODO: 프로그램 구현
         List<String> cars = inputName();
+        int tryCount = inputCount();
+
+        for (int i=0; i<tryCount; ++i) {
+            
+        }
     }
 }
