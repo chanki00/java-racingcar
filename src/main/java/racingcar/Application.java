@@ -52,7 +52,11 @@ public class Application {
         System.out.println();
     }
 
-
+    public static List<Car> findWinner(List<Car> cars) {
+        int maxValue = cars.stream().map(car -> car.getAdvanceCount()).max((o1, o2) -> o1-o2).orElse(0);
+        List<Car> winners = cars.stream().filter(o1 -> o1.getAdvanceCount() == maxValue).toList();
+        return winners;
+    }
 
 
     public static void main(String[] args) {
@@ -66,6 +70,6 @@ public class Application {
             startRound(cars);
         }
 
-
+        List<Car> winners = findWinner(cars);
     }
 }
