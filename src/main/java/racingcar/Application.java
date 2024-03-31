@@ -2,15 +2,19 @@ package racingcar;
 
 import camp.nextstep.edu.missionutils.Console;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Application {
-    public static List<String> inputName() {
+    public static Map<String, Integer> inputName() {
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,)로 구분)");
-        List<String> names = Arrays.stream(Console.readLine().split(",")).toList();
-        return names;
+        String[] names = Console.readLine().split(",");
+        Map<String, Integer> cars = new HashMap<>();
+
+        for (String name : names) {
+            cars.put(name, 0);
+        }
+
+        return cars;
     }
 
     public static int inputCount() {
@@ -19,13 +23,15 @@ public class Application {
         return count;
     }
 
+    public static void
+
     public static void main(String[] args) {
         // TODO: 프로그램 구현
-        List<String> cars = inputName();
+        Map<String, Integer> cars = inputName();
         int tryCount = inputCount();
 
         for (int i=0; i<tryCount; ++i) {
-            
+
         }
     }
 }
