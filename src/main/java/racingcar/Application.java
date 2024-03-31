@@ -12,6 +12,7 @@ public class Application {
         List<Car> cars = new ArrayList<>();
 
         for (String name : names) {
+            if (name.length() > 5) throw new IllegalArgumentException("잘못된 이름 입력");
             cars.add(new Car(name));
         }
 
