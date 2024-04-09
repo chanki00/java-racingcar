@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.domain;
 
 public class Car {
     private String name;
@@ -18,5 +18,9 @@ public class Car {
 
     public void setAdvanceCount(int advanceCount) {
         this.advanceCount = advanceCount;
+    }
+
+    public void advance() {
+        ++advanceCount;
     }
 }
